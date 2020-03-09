@@ -1,0 +1,338 @@
+% Build this document with LuaTeX, a modern Unicode-aware LaTeX engine
+% that uses system TTF and OTF font files.
+% This is needed for the fontspec, microtype, and nolig packages.
+%
+% We're using KOMA Script to hand-tune footnotes and TOC appearance.
+% It should be available in your texlive distribution,
+% which is how most distros package LaTeX.
+\documentclass[fontsize=10bp, numbers=endperiod, draft=true]{scrbook}
+
+% Margins: see http://practicaltypography.com/page-margins.html and
+% http://practicaltypography.com/line-length.html
+% We're aiming for 80-ish characters per line.
+\usepackage[
+    a5paper,
+    inner=0.6in,outer=0.6in,top=0.75in,bottom=0.5in,
+    footnotesep=10bp,
+    footskip=3em,
+    includefoot,
+]{geometry}
+
+\usepackage[fleqn]{amsmath}
+
+\usepackage{fontspec}
+
+\setmainfont[
+    Ligatures=TeX,
+    Numbers=Lowercase,
+    SmallCapsFeatures={StylisticSet=10},
+    UprightFeatures={
+        SizeFeatures={
+            {Size={-10},Font="Century Supra T4", SmallCapsFont="Century Supra C4"},
+            {Size={10-},Font="Century Supra T3", SmallCapsFont="Century Supra C3"},
+        },
+    },
+    BoldFeatures={
+        SizeFeatures={
+            {Size={-10},Font="Century Supra T4 Bold", SmallCapsFont="Century Supra C4 Bold"},
+            {Size={10-},Font="Century Supra T3 Bold", SmallCapsFont="Century Supra C3 Bold"},
+        },
+    },
+    ItalicFeatures={
+        SizeFeatures={
+            {Size={-10},Font="Century Supra T4 Italic", SmallCapsFont="Century Supra C4"},
+            {Size={10-},Font="Century Supra T3 Italic", SmallCapsFont="Century Supra C3"},
+        },
+    },
+    BoldItalicFeatures={
+        SizeFeatures={
+            {Size={-10},Font="Century Supra T4 Bold Italic", SmallCapsFont="Century Supra C4 Bold"},
+            {Size={10-},Font="Century Supra T3 Bold Italic", SmallCapsFont="Century Supra C3 Bold"},
+        },
+    },
+]{Century Supra T3}
+
+\setsansfont[Ligatures=TeX,
+    StylisticSet=01,
+    UprightFont = *-400-Book,
+    ItalicFont = *-400-BookItalic,
+    BoldFont = *-600-Semi,
+    BoldItalicFont = *-600-SemiItalic
+]{Jost}
+
+\setmonofont[
+    Numbers=SlashedZero,
+    Scale=MatchLowercase,
+    UprightFeatures={
+        SizeFeatures={
+            {Size={-10}, Font=DriveMono-Book},
+            {Size={10-}, Font=DriveMono-Regular},
+        },
+    },
+    ItalicFeatures={
+        SizeFeatures={
+            {Size={-10}, Font=DriveMono-BookItalic},
+            {Size={10-}, Font=DriveMono-Italic},
+        },
+    },
+    BoldFont=DriveMono-Bold,
+    BoldItalicFont=DriveMono-BoldItalic
+]{Drive Mono}
+
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=american]{english}
+
+\usepackage{microtype} % Font expansion, protrusion, and other goodness
+
+% Disable ligatures across grapheme boundaries
+% (see the package manual for details.)
+\usepackage[american]{selnolig}
+% I have no idea why Garamond has this on by default.
+\nolig{Th}{T|h}
+
+% Use symbols for footnotes, resetting each page
+\usepackage[perpage,bottom,symbol*]{footmisc}
+
+% Left flush footnotes. See the KOMA Script manual.
+\deffootnote[1em]{1em}{1em}{\thefootnotemark}
+% Set the width of the rule separating body text and footnotes
+\setfootnoterule{0.8\textwidth}
+
+% Like many fonts, Century Supra's asterisk is already set in a "superscripted" form.
+% Superscripting *that* makes it annoyingly small.
+% To fix this, we have to redefine footnote marks so that they aren't superscript,
+% then raise all the other symbols.
+%
+% Feel free to remove this if your body type doesn't have this peculiarity,
+% but unfortunately many do.
+% See http://tex.stackexchange.com/a/16241
+%
+% We use the Unicode symbols themselves (instead of \dagger, \ddagger, \P, etc.)
+% because the latter fall back to Computer Modern/Latin Modern in some cases,
+% (e.g., if you're using mathastext instead of unicode-math).
+% Alternatively, you could use \textdagger, \textddagger, etc.,
+% but this seems more concise.
+\DefineFNsymbols*{tweaked}{%
+    {*}%
+    {\textsuperscript†}%
+    {\textsuperscript‡}%
+    {\textsuperscript{◊}}%
+    {\textsuperscript{§}}%
+    {**}%
+    {\textsuperscript{††}}%
+    {\textsuperscript{‡‡}}%
+}
+\setfnsymbol{tweaked}
+\deffootnotemark{\thefootnotemark}
+
+\DeclareTOCStyleEntry[%
+    beforeskip=8bp,
+    entrynumberformat = \sffamily\addfontfeature{Numbers=Tabular},
+    pagenumberformat = \sffamily\addfontfeature{Numbers=Tabular},
+    linefill = \TOCLineLeaderFill
+]{tocline}{chapter}
+\DeclareTOCStyleEntry[%
+    beforeskip=1bp,
+    entrynumberformat = \sffamily\addfontfeature{Numbers=Tabular},
+    pagenumberformat = \sffamily\addfontfeature{Numbers=Tabular},
+    indent=0.4in
+]{tocline}{section}
+\DeclareTOCStyleEntry[%
+    beforeskip=0pt,
+    entrynumberformat = \sffamily\addfontfeature{Numbers=Tabular},
+    pagenumberformat = \sffamily\addfontfeature{Numbers=Tabular},
+    indent=0.6in
+]{tocline}{subsection}
+
+% Don't use a sans font for description labels.
+\addtokomafont{descriptionlabel}{\rmfamily}
+% Sections and such use serif type.
+\setkomafont{disposition}{\sffamily}
+% Uppercase numbers for chapters.
+% Set size and style of section and subsections
+\setkomafont{section}{\Large\itshape}
+\setkomafont{subsection}{\large\itshape}
+% Don't put big spaces before chapter headings
+\renewcommand{\chapterheadstartvskip}{\vspace{0.15in}}
+
+\setcapwidth[c]{.75\textwidth}
+%\setcapmargin{0pt}
+\setkomafont{caption}{\sffamily\footnotesize}
+\setkomafont{captionlabel}{\sffamily\footnotesize}
+\renewcommand*{\figureformat}{}
+\renewcommand*{\tableformat}{}
+\renewcommand*{\captionformat}{}
+
+% Use uppercase numbers for numbered lists.
+% (We're using lowercase ones for the body text.)
+% See http://tex.stackexchange.com/a/133186
+\usepackage{enumitem}
+\setlist[enumerate]{font=\addfontfeatures{Numbers=LowercaseOff}}
+\setlist[description]{leftmargin=1em}
+
+\usepackage{tabularx}
+
+% Custom footer
+\usepackage[draft=false]{scrlayer-scrpage}
+\clearpairofpagestyles
+\pagestyle{scrheadings}
+\setkomafont{pagefoot}{\upshape\sffamily}
+\cefoot*{\thepage}
+\cofoot*{\thepage}
+
+\usepackage{changepage} % For adjustwidth
+
+\usepackage{metalogo} % for \LuaLaTeX
+
+% Indent code examples, etc., by double the text size.
+\newenvironment{leftfigure}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22bp}{0pt}}
+  {\end{adjustwidth}\vspace{0.5\baselineskip minus 0.3\baselineskip}}
+
+% Like the above, but with no adjustwidth
+\newenvironment{flushleftfigure}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\noindent\ignorespacesafterend}
+  {\vspace{0.5\baselineskip minus 0.3\baselineskip}\par\noindent\ignorespacesafterend}
+
+\newenvironment{centerfigure}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22bp}{22bp}\centering}
+  {\end{adjustwidth}\vspace{0.5\baselineskip minus 0.3\baselineskip}}
+
+\usepackage{graphicx}
+
+\usepackage{csquotes}
+
+\newcommand{\edition}{First edition \acronym{(WIP)}}
+
+\title{Some Idiot's Guide to Modern Air Combat}
+\author{José Jimémenez}
+\date{\today}
+
+% Custom footer
+% Hyperlinks
+\usepackage[unicode,pdfusetitle,draft=false]{hyperref}
+\hypersetup{
+    colorlinks=true, % Use colors
+    linkcolor=black, % Intra-doc links are black, like the rest of the text.
+    urlcolor=blue % URLs are blue
+}
+
+% Use \punckern to overlap periods, commas, and footnote markers
+% for a tighter look.
+% Care should be taken to not make it too tight - f" and the like can overlap
+% if you're not careful.
+\newcommand{\punckern}{\kern-0.2ex}
+% For placing commas close to, or under, quotes they follow.
+% We're programmers, and we blatantly disregard American typographical norms
+% to put the quotes inside, but we can at least make it look a bit nicer.
+\newcommand{\quotekern}{\kern-0.5ex}
+
+
+% Create an unbreakable string of text in a monospaced font.
+% Useful for `command --line --args`
+\newcommand{\monobox}[1]{\mbox{\texttt{#1}}}
+
+% Italicize new terms
+\newcommand{\introduce}[1]{\textit{#1}}
+
+% Letterspace acronyms a bit.
+\newcommand{\acronym}[1]{\textsc{#1}}
+
+% "Chapter <num>" references
+\newcommand{\chapref}[1]{chapter~\ref{#1}}
+
+% monospace URLs (without setting the http://...)
+\newcommand{\http}[1]{\url{http://#1}}
+\newcommand{\https}[1]{\url{https://#1}}
+
+% See http://tex.stackexchange.com/a/68310
+\makeatletter
+\let\runauthor\@author
+\let\rundate\@date
+\let\runtitle\@title
+\makeatother
+
+% Spend a bit more time to get better word spacing.
+% See http://tex.stackexchange.com/a/52855/92465
+\emergencystretch=1ex
+
+% Do as I say, not as I do.
+\widowpenalty=10000
+\clubpenalty=10000
+
+% For an online PDF, blank pages are annoying.
+\renewcommand{\cleardoublepage}{\clearpage}
+
+\begin{document}
+\fontsize{10bp}{12bp}\selectfont
+
+\frontmatter
+\setcounter{secnumdepth}{0}
+\setlength\parindent{0pt}
+
+% Custom title instead of \maketitle
+\pagenumbering{gobble}
+\vspace*{1in}
+\begin{center}
+\sffamily
+\fontsize{0.25in}{0.3in}\selectfont
+Some Idiot's Guide to \\
+\fontsize{0.5in}{0.6in}\selectfont
+Modern Air Combat
+
+\normalsize
+\vspace{1.5\baselineskip}
+\edition
+\vspace{2in}
+
+\LARGE
+\runauthor
+\end{center}
+\clearpage
+
+{\raggedright%For the page
+\null
+\vfill
+
+Copyright © 2018--2020 \\
+by \runauthor
+\bigskip
+
+This book is licensed under the \\
+{\addfontfeature{Numbers={LowercaseOff}}Creative Commons Attribution-ShareAlike~4.0}
+International License. \\
+In short, you are free to share, translate, adapt, or improve this book
+so long as you give proper credit and provide your contributions under
+the same license. \\
+The license's full text is available at \\
+\https{creativecommons.org/licenses/by-sa/4.0/legalcode}
+
+\vspace{0.5in}
+\edition{} (online \acronym{pdf}), typeset \today.
+} % end ragged right
+\clearpage
+
+\vspace*{1in}
+{\itshape%
+Some dedication here.
+}
+\cleardoublepage
+
+\pagenumbering{roman}
+\tableofcontents
+
+\mainmatter
+% Indent by one lead, as suggested in The Elements of Typographic Style.
+\setlength\parindent{14bp}
+
+\pagenumbering{arabic}
+\setcounter{page}{1} % Restart page numbering after the ToC.
+\cleardoublepage
+
+\refoot*{SIGMAC}
+\rofoot*{SIGMAC}
+
+\input{what}
+\input{back}
+
+\end{document}
