@@ -25,31 +25,149 @@ Before we dive in, know two things:
     they'll wonder why you're trying to shoot them.
 \end{enumerate}
 
-\section{Combat}
+\section{Who? Where?}
 
-Finding targets and shooting them.
 \begin{description}
-\item[Contact] You notice a potential target on your sensors (usually radar).
+\item[Capture] I see a ground target on my sensors (such as radar
+    or targeting pod).
+
+\item[Contact] I see a potential target on my sensors (usually radar).
+    Also brevity for the potential target itself.
     Provide a location and additional information if you can.
 
-    ``Contact, Bullseye 120 35. Hot.'' CHECKME
+    ``Contact, Bullseye 120 35, 18 thousand. Hot.''
 
-\item[Fox 1] Friendly launch of a semi-active radar homing \acronym{(sarh)}
+\item[Friendly/Bogey/Outlaw/Bandit/Hostile]
+    Air contacts, by increasing threat:
+    \begin{description}
+    \item[Friendly] An positively-identified allied contact.
+    \item[Bogey] An unknown contact.
+    \item[Outlaw] A bogey that is likely a hostile
+        (e.g., that launched from an enemy airfield)
+    \item[Bandit] An enemy contact---does not imply permission to engage.
+    \item[Hostile] An enemy contact---free to fire.
+    \end{description}
+
+\item[BRAA] Short for \emph{Bearing, Range, Altitude, Aspect}.
+    From my plane, the thing I'm describing is in this direction
+    (bearing), for this distance (range), at this altitude.
+    Provide the direction they're moving (aspect) if possible.
+    Aspects:
+    \begin{description}
+    \item[Hot] heading towards you
+    \item[Dragging] heading away from you
+    \item[Beaming] heading perpendicular to you (provide a direction)
+    \end{description}
+
+    ``Bogey, BRAA 35 for 50, 18 thousand, hot.''
+
+\item[Bullseye] The thing I'm describing is this direction and distance
+    from the \emph{bullseye}.
+    The bullseye is a preplanned location---it could be the target, some landmark,
+    or just an arbitrary point---what's important is that everyone agrees where
+    it is ahead of time.
+
+    ``Engage armored column, Bullseye 180 20''
+
+\item[Group] Air contacts flying within 3 miles of each other.
+
+\item[Picture] Tell me about nearby contacts.
+    (using BRAA or Bullseye calls).
+
+\item[Tally/No Joy] I see the enemy.\,/\,I don't see the enemy.
+
+\item[Tumbleweed] I'm disoriented and don't know what's going on.
+    Help me if you can.
+
+\item[Visual/Blind] I see the friendly.\,/\,I don't see the friendly.
+\end{description}
+
+\section{Administration}
+
+What are you doing? What's your status?
+\begin{description}
+
+\item[As Fragged] I'm continuing as-planned.
+
+\item[Bingo] I'm low on fuel and need to leave right now if I want enough
+    to land.
+
+\item[Commit] Intercept the given group.
+
+    You usually brief a \emph{commit range}---if contacts get within that range,
+    you stop what you're doing and commit on those contacts.
+
+\item[Fence In] Get ready for combat---shut off external lights,
+    arm weapons, enable electronic countermeasures \acronym{(ecm)}, etc.
+    From ``crossing the fence'' when you enter bad guy territory.
+    Once you're out of combat, you \emph{fence out}.
+
+\item[Gate/Buster] Fly as fast as you can [with/without] afterburner.
+
+\item[Joker] I'm starting to run low on fuel and should think about getting
+    out of here. Comes before bingo.
+
+\item[Rolex] Delay the (package's) plan by the given amount of time.
+
+    ``Package, rolex three minutes.''
+\end{description}
+
+\section{Combat}
+
+Shooting things and not getting shot.
+\begin{description}
+
+\item[Defending/Engaged defensive] I'm busy maneuvering to avoid getting shot by
+    a missile. Provide additional information if you can.
+
+    ``Defending \designation{SA-5}, West!''
+
+\item[Delouse] A hostile jet is chasing me; please shoot them!
+
+\item[Dirt] A \acronym{sam} radar appeared on my \acronym{rwr}.
+
+\item[Fox 1] I'm shooting a semi-active radar homing \acronym{(sarh)}
     missile, like an \designation{AIM-7} Sparrow.
-\item[Fox 2] Friendly launch of a heat-seeking missile, like an
+\item[Fox 2] I'm shooting a heat-seeking missile, like an
     \designation{AIM-9} Sidewinder.
-\item[Fox 3] Friendly launch of an active radar homing \acronym{(arh)} missile,
+\item[Fox 3] I'm shooting an active radar homing \acronym{(arh)} missile,
     like an \designation{AIM-120} AMRAAM.
 
-\item[Paveway] Friendly is dropping laser-guided bombs,
-    like the Paveway~II series (\designation{GBU-10/12/16})
+\item[Guns] I'm shooting my cannon.
 
-\item[Pickle] Friendly is dropping bombs (usually unguided),
-    like the Mark~80 series.
+\item[Nails] An aircraft's search radar appeared on my \acronym{rwr}.
+
+\item[Magnum] I'm shooting an anti-radiation missile,
+    like an \designation{AGM-88} HARM.
+
+\item[Paveway] I'm dropping a laser-guided bombs,
+    like a \designation{GBU-}\designation{10/12/16}
+
+\item[Pickle] I'm dropping bombs (usually unguided),
+    like the \designation{Mark 80} series.
+
+\item[Pig] I'm dropping a glide weapon, like a \designation{AGM-154} JSOW.
+
+\item[Rifle] I'm shooting an air-to-ground missile,
+    like an \designation{AGM-65} Maverick.
+
+\item[SAM] I \emph{see} an incoming surface to air missile!
+
+\item[Singer] My \acronym{rwr} indicates a \acronym{sam} is shooting at me!
+
+\item[Slapshot] Shoot an anti-radiation missile in at the given radar/direction \\
+    (as fast as possible, \emph{because they're shooting at me!})
+
+    ``Slapshot \designation{SA-3}, South!''
+
+\item[Sniper] Shoot an anti-radiation missile at the given \acronym{sam} radar.
+
+    ``Sniper \designation{SA-2}, Bullseye 270 30.''
+
+\item[Spike/Mud Spike] An [aircraft/\acronym{sam}] radar is tracking me. \\
+    (Now might be a good idea to start defending.)
 
 \item[Splash] Target destroyed. Sometimes \textbf{Shack} is used for
     air-to-ground impacts.
 
-\item[Rifle] Friendly launch of an air-to-ground missile,
-    like an \designation{AGM-65} Maverick.
 \end{description}
