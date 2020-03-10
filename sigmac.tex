@@ -238,6 +238,8 @@
 % Letterspace acronyms a bit.
 \newcommand{\acronym}[1]{\textsc{#1}}
 
+\newcommand{\designation}[1]{\mbox{\addfontfeature{Numbers=LowercaseOff}#1}}
+
 % "Chapter <num>" references
 \newcommand{\chapref}[1]{chapter~\ref{#1}}
 
@@ -264,7 +266,7 @@
 \renewcommand{\cleardoublepage}{\clearpage}
 
 \begin{document}
-\fontsize{10bp}{12bp}\selectfont
+\fontsize{10bp}{13bp}\selectfont
 
 \frontmatter
 \setcounter{secnumdepth}{0}
@@ -333,6 +335,8 @@ Some dedication here.
 \rofoot*{SIGMAC}
 
 \input{what}
+\input{brevity}
+
 \input{back}
 
 \end{document}
