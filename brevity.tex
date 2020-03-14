@@ -2,8 +2,8 @@
 \label{brevity}
 
 Like most professions, combat aviation has its own jargon.
-Called \emph{brevity}, it's incomprehensibly dense to a newcomer,
-but it lets pilots communicate quickly in the heat of battle.
+Called \emph{brevity}, it's designed to let pilots communicate
+as quickly as possible in the heat of battle.
 
 Most folks you find online will be using \textsc{us/nato} brevity.
 There's many,
@@ -11,12 +11,38 @@ many terms,\punckern\footnote{An early-2000s version of an official
 multiservice \textsc{us} training guide is declassified and freely available
 online at \url{https://apps.dtic.mil/dtic/tr/fulltext/u2/a404426.pdf}}
 but we'll cover some of the most common ones.
-Before we dive in, know two things:
+Before we dive in, though, a few points:
 \begin{enumerate}
-\item If you can't think of a term you want,
+\item Basic radio protocol is, ``<you>, <me>. <what I have to say>''
+    For example, if my callsign is Warhawk and I want to ask another flight,
+    callsign Hammer, what they're up to, I'd say,
+    ``Hammer, Warhawk. Status''
+
+    Of course, this isn't an absolute rule.
+    If I'm leading a flight and I want us to get ready for combat, I'll say,
+    ``Flight, fence in''\quotekern, not, ``Flight, lead. Fence in.''
+    Similarly, my wingman will just say, ``Two is fenced in\dots''
+    not, ``Two, lead, fenced in\dots''
+    Don't be an annoying pedant.
+
+\item If you can't think of the right brevity,
     \emph{use plain language!}
     The main goal is to be understood, quickly.
-    Sounding cool is just an added bonus.
+    Sounding cool is an added bonus.
+
+\item Provide additional information whenever you can.
+    If you're shooting an AMRAAM, ``Fox~3'' isn't a very helpful call---it tells
+    me a missile is coming off your jet, but it could be pointed at my ass
+    for all I know.
+    ``Fox~3, Bullseye 069 42'' lets me know what the intended target is,
+    and I'll maneuver (and engage other targets!) to best support you.
+    Similarly, if the two of us merge with a pair of bandits,
+    and you call ``Fox 2, \designation{Mig-21} low''\quotekern,
+    I'll take the high one.
+
+    Work with friendlies to build a shared unerstanding of what's going on
+    around you.
+
 \item Some terms have one version for friendly forces
     and another for hostiles or unknown forces.
     Don't mix them up!
@@ -29,12 +55,37 @@ Before we dive in, know two things:
 \section{Who? Where?}
 
 \begin{description}
+\item[BRAA] Short for \emph{Bearing, Range, Altitude, Aspect}.
+    From my plane, the thing I'm describing is in this direction
+    (bearing), for this distance (range), at this altitude.
+    Provide the direction they're moving (aspect) if possible.
+
+    ``Bogey, BRAA 035 50, 18 thousand, hot.''
+
+    Bearings are in degrees and ranges are in miles.
+    Altitudes are in thousands of feet, called ``thousand'' for hostiles
+    and ``angels'' for friendlies. Aspects include:
+    \begin{description}
+    \item[Hot] heading towards you
+    \item[Dragging] heading away from you
+    \item[Beaming] heading perpendicular to you (provide a direction)
+    \end{description}
+
+\item[Bullseye] The thing I'm describing is this direction and distance
+    from the \emph{bullseye}.
+    The bullseye is a preplanned location everyone has agreed to use for
+    a reference. It could be a large ground target (like an airfield),
+    some landmark, or just an arbitrary point---all that matters is
+    everyone knows where it is.
+
+    ``Engaging armored column, Bullseye 180 20''
+
 \item[Capture] I see a ground target on my sensors (such as radar
     or targeting pod).
 
 \item[Contact] I see a potential target on my sensors (usually radar).
     Also brevity for the potential target itself.
-    Provide a location and additional information if you can.
+    Follow with a location.
 
     ``Contact, Bullseye 120 35, 18 thousand. Hot.''
 
@@ -55,29 +106,17 @@ Before we dive in, know two things:
     \item[Hostile] An enemy contact---free to fire.
     \end{description}
 
-\item[BRAA] Short for \emph{Bearing, Range, Altitude, Aspect}.
-    From my plane, the thing I'm describing is in this direction
-    (bearing), for this distance (range), at this altitude.
-    Provide the direction they're moving (aspect) if possible.
-    Aspects:
-    \begin{description}
-    \item[Hot] heading towards you
-    \item[Dragging] heading away from you
-    \item[Beaming] heading perpendicular to you (provide a direction)
-    \end{description}
-
-    ``Bogey, BRAA 35 for 50, 18 thousand, hot.''
-
-\item[Bullseye] The thing I'm describing is this direction and distance
-    from the \emph{bullseye}.
-    The bullseye is a preplanned location---it could be a large ground target
-    (like an airfield), some landmark,
-    or just an arbitrary point---what matters is that everyone knows where
-    it is so they can use it as a shared reference.
-
-    ``Engage armored column, Bullseye 180 20''
+\item[Furball] A dogfight of friendlies and hostiles.
+    Don't shoot an active radar missile into these or it might go pitbull
+    on a friendly.
 
 \item[Group] Air contacts flying together.
+
+\item[Merged] Contacts---usually bandits---are within visual range
+    \acronym{(wvr)}.
+    Get your eyes out of the cockpit and start turning \& burning.
+    Named after what happens to multiple contacts when they run into each other
+    on someone's radar screen---they \emph{merge}.
 
 \item[Picture] Tell me about nearby contacts (with BRAA or Bullseye calls).
     Requested from \acronym{c2} assets.
