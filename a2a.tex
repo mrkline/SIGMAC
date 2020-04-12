@@ -3,9 +3,9 @@
 Intercepting and shooting other airplanes is about managing \emph{time and space}.
 If you know a bandit is 100 miles away from your jet,
 you have lots of time to create, execute, and evaluate a plan.
-If someone pops-up five miles away and starts shooting at you,
+If someone pops up five miles away and starts shooting at you,
 all you can do is react.
-Situational awareness \acronym{(sa)} is king---knowing what's going on around
+Situational awareness \ac{(sa)} is king---knowing what's going on around
 you will keep you alive and let \emph{you} decide how a fight will unfold.
 
 \section{BVR: Searching}
@@ -13,40 +13,98 @@ you will keep you alive and let \emph{you} decide how a fight will unfold.
 You've got to find the bad guys before you can shoot them,
 so use the tools you have to build a \introduce{picture} of the airspace
 around you.
-These tools include your own radar, as well as
-airborne or ground-based command and control \acronym{(c2)},
+These tools include your own radar,
+airborne or ground-based command \& control \ac{(c2)},
 datalink, and other planes in your flight.
 Communicate and share information with each other.\punckern\footnote{See
 \chapref{brevity} for more on how to quickly communicate.}
 
-Searching with your radar is something that comes with practice.
+Using your radar to search for targets comes with practice.
 While details vary from plane to plane,
 all of them\footnote{Ignoring very modern active electronically scanned array
-\acronym{(aesa)} radars, which you probably won't find in a sim.}
-have the same fundamental limitation: they work by pointing a narrow radar beam
-around using an antenna on a gimbal in your nose.
-This means you need to choose between searching a big area slowly,
-or searching a smaller area rapidly.
-You change the size and shape of this area by controlling the horizontal azimuth
-and the number of vertical bars in your scan.
-Imagine searching a dark room with a narrow flashlight beam.
-You can examine the whole room by swinging the flashlight in wide arcs
-in front of you (azimuth), and repeating those arcs up and down (bars).
-Or you can focus on a particular corner by swinging the light in short arcs
-repeated over fewer vertical motions.
-There's no ``right'' approach---it depends on the situation.
+\ac{(aesa)} radars, which you probably won't find in a sim.}
+work by moving a narrow radar beam around by pointing an antenna in your nose.
+The narrow field of view of this antenna means you need to choose between
+slowly searching a big area, or rapidly searching a small area.
 
-\section{BVR engagements}
+Imagine you're in a dark room with a flashlight.
+You can slowly reveal the whole room by swinging the flashlight in wide arcs
+in front of you (increasing your scan azimuth),
+and repeating those arcs up and down, one on top of each other
+(scan bars).
+Or you can focus on a particular corner by swinging the light in short arcs
+repeated over fewer vertical bars.
+There's no ``right'' search settings---it
+all depends on the situation.
+
+Once you've found some contacts you're interested in,
+use radar modes like track-while-scan \ac{(tws)} to follow the target.
+This will provide you with frequent updates on the target's position, heading,
+and speed, while still providing \ac{sa} of the surrounding airspace.
+
+\section{IFF}
 
 You've found something you want to shoot. Great!
 Next make sure to \emph{positvely identify}
-that it's worth shooting with whatever you have at your disposal:
-\acronym{iff} transponders,
-declarations from \acronym{c2},
-non-cooperative-target recognition \acronym{(nctr)}
+that it's worth shooting using tools like
+\ac{iff} transponders,
+declarations from \ac{c2},
+and non-cooperative-target recognition \ac{(nctr)}.
+Once you're sure they're hostile, let's talk about shooting missiles.
 
-Once you've found some contacts you're interested in,
-use radar modes like track-while-scan \acronym{(tws)} to follow the target.
-This will provide you with frequent updates on the target's position, heading,
-and speed, while still allowing you to search the space around them.
-From here, 
+\section{Missile kinematics and you}
+
+At the risk of stating the obvious, you win a \ac{bvr} fight by making sure your
+missile hits them before their missile hits you.
+But unless you're in the movie \emph{Behind Enemy Lines},
+missiles don't endlessly chase down their targets.
+The rocket motor burns for a few seconds,
+accelerating the missile to very high speeds (Mach 2+),
+then the missile coasts to its target.\punckern\footnote{Many
+\ac{bvr} missiles also use the time the motor burns to climb---or
+\introduce{loft}---to higher altitudes where there is less air resistance.}
+
+This makes \ac{bvr} a game of \emph{energy} management.
+You want to maximize your missiles' energy so they can get to your target.
+At the same time, you want minimize incoming missiles' energy
+so that they fall out of the sky trying to catch you.
+Let's talk about the ``not getting shot'' part first.
+
+\textbf{\textsc{Do not fly directly towards someone shooting
+you.}}\punckern\footnote{Or who \emph{might} be shooting you---we'll talk about
+active radar homing \ac{(arh)} missiles shortly.}
+Doing so \emph{maximizes} an incoming missile's energy,
+since it just has to fly in a straight line, right into your dumb face.
+Instead, we're going to \introduce{crank}.
+Once an enemy close enough that they could feasibly shoot you,
+turn so that they're on the edge of your radar scope,
+a few degrees from its gimbal limit.
+This does two important things:
+first, it maximizes the distance an incoming missile has to fly to get you
+(while still allowing you to track them with your radar).
+Second, it forces an incoming missile to \emph{continuously turn} to
+continue aiming at you.
+And because missiles, like airplanes, turn by sticking their control surfaces
+into the wind stream, this slows them down.
+Speed is also a factor---the faster you're going,
+the further a missile has to chase you down.
+
+If you're up against a competent adversary and cranking alone isn't enough to
+defeat an incoming missile, it's time for more drastic measures.
+Dive to lower altitudes, where the thicker air will induce more drag on
+the missile. Fly a perpendicular heading to the missile,
+which maximizes the amount the it has to turn and makes you harder 
+to track you, especially if you're below the radar locking on to you.
+Dispense chaff and flares as-needed.
+Finally, when the missile is close,\punckern\footnote{Knowing \emph{when} a
+missile is seconds from impact comes with timing, experience, and a bit of luck.}
+pull a high-G turn \emph{into} the missile and across its nose.
+To cut the corner, the missile will have to turn even harder,
+bleeding much of its energy.
+
+Same applies when you're shooter.
+\begin{itemize}
+\item Speed \& Angels
+\item Probabilities: DLZ, Rpi, Rne
+\item Turn in: don't make the missile
+\end{itemize}
