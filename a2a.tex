@@ -1,4 +1,4 @@
-\chapter{Air to Air}
+\chapter{Air to Air: Beyond Visual Range}
 
 Intercepting and shooting other airplanes is about managing \emph{time and space}.
 If you know a bandit is 100 miles away from your jet,
@@ -8,7 +8,7 @@ all you can do is react.
 Situational awareness \ac{(sa)} is king---knowing what's going on around
 you will keep you alive and let \emph{you} decide how a fight will unfold.
 
-\section{BVR: Searching}
+\section{Searching}
 
 You've got to find the bad guys before you can shoot them,
 so use the tools you have to build a \introduce{picture} of the airspace
@@ -56,7 +56,7 @@ Once you're sure they're hostile, let's talk about shooting missiles.
 
 At the risk of stating the obvious, you win a \ac{bvr} fight by making sure your
 missile hits them before their missile hits you.
-But unless you're in the movie \emph{Behind Enemy Lines},
+But outside the movie \emph{Behind Enemy Lines},
 missiles don't endlessly chase down their targets.
 The rocket motor burns for a few seconds,
 accelerating the missile to very high speeds (Mach 2+),
@@ -65,9 +65,9 @@ then the missile coasts to its target.\punckern\footnote{Many
 \introduce{loft}---to higher altitudes where there is less air resistance.}
 
 This makes \ac{bvr} a game of \emph{energy} management.
-You want to maximize your missiles' energy so they can get to your target.
-At the same time, you want minimize incoming missiles' energy
-so that they fall out of the sky trying to catch you.
+You want to maximize your missile's energy so it can get to your target.
+At the same time, you want minimize any incoming missile's energy
+so that it falls out of the sky trying to catch you.
 Let's talk about the ``not getting shot'' part first.
 
 \textbf{\textsc{Do not fly directly towards someone shooting
@@ -76,14 +76,14 @@ active radar homing \ac{(arh)} missiles shortly.}
 Doing so \emph{maximizes} an incoming missile's energy,
 since it just has to fly in a straight line, right into your dumb face.
 Instead, we're going to \introduce{crank}.
-Once an enemy close enough that they could feasibly shoot you,
-turn so that they're on the edge of your radar scope,
+Once an enemy gets close enough that they could feasibly shoot you,
+turn so that they're on the side of your radar scope,
 a few degrees from its gimbal limit.
 This does two important things:
 first, it maximizes the distance an incoming missile has to fly to get you
 (while still allowing you to track them with your radar).
 Second, it forces an incoming missile to \emph{continuously turn} to
-continue aiming at you.
+aim at you.
 And because missiles, like airplanes, turn by sticking their control surfaces
 into the wind stream, this slows them down.
 Speed is also a factor---the faster you're going,
@@ -92,19 +92,76 @@ the further a missile has to chase you down.
 If you're up against a competent adversary and cranking alone isn't enough to
 defeat an incoming missile, it's time for more drastic measures.
 Dive to lower altitudes, where the thicker air will induce more drag on
-the missile. Fly a perpendicular heading to the missile,
-which maximizes the amount the it has to turn and makes you harder 
-to track you, especially if you're below the radar locking on to you.
+the missile. Fly a perpendicular heading to the missile---\introduce{beam} it.
+Beaming maximizes the amount the missile has to turn,
+and makes you hard to track on radar,
+especially if you're below the one locking you up.
 Dispense chaff and flares as-needed.
 Finally, when the missile is close,\punckern\footnote{Knowing \emph{when} a
 missile is seconds from impact comes with timing, experience, and a bit of luck.}
 pull a high-G turn \emph{into} the missile and across its nose.
 To cut the corner, the missile will have to turn even harder,
-bleeding much of its energy.
+bleeding lots of energy.
 
-Same applies when you're shooter.
+All the same factors apply when you're the shooter.
+The time to squeeze the trigger depends on:
 \begin{itemize}
-\item Speed \& Angels
-\item Probabilities: DLZ, Rpi, Rne
-\item Turn in: don't make the missile
+\item Range (obviuosly)
+\item Altitude: higher is better, but being too high can make it hard to
+    maneuver if you get shot at.
+\item Aspect \& closure rate:
+    A missile has less distance to cover if you and your target are racing
+    towards each other than if the target is running away.
 \end{itemize}
+Once you've locked onto a target in,
+your jet's avionics will calculate a few ranges and display them on your
+heads-up display \ac{(hud)}.
+These usually include:
+\begin{itemize}
+\item The maximum aerodynamic range of the missile, usually called
+    \fakesub{R}{aero}.
+    A shot at this range will only hit if the target doesn't maneuver
+    \emph{at all} after you launch.
+\item The maximum range where a hit is \emph{probable},
+    assuming the target continues on its current course at its current airspeed.
+    This is usually called \fakesub{R}{max} or \fakesub{R}{pi}.
+\item The maximum range where a hit is probable
+    even if the target turns and runs away at its current airspeed
+    as soon as you launch.
+    This is usually called \fakesub{R}{tr} (Range, turn \& run)
+    or \fakesub{R}{ne} (Range, no escape).
+\item The minimum range where the missile has enough room to turn into the
+    enemy and arm itself, called \fakesub{R}{min}.
+\end{itemize}
+Notice that all of these ranges are expressed as probabilities!
+Even if the missile works perfectly,
+you don't know how your target will start maneuvering once you've shot at them.
+A shot inside \fakesub{R}{ne} could still be defeated if the enemy can accelerate,
+break your radar lock, or outmaneuver the missile as it gets close.
+Holding your shot (above \fakesub{R}{min}) will almost always give you
+a better chance at a kill,
+but it also increases the likelyhood you'll get hit in the process.
+
+Keeping all that in mind, let's talk tactics.
+
+\section{The SARH fight}
+
+Semi-active radar homing \ac{(sarh)} missiles like the \designation{AIM-7}
+lack their own radar emitter, so to home in on your target,
+you must continuously ``paint'' it with your radar in single-target track
+\ac{(stt)} mode.
+This presents two unique challenges:
+\begin{enumerate}
+\item Any maneuvering you do must keep the target inside the limits of your radar
+    gimbals. In other words,
+    you have to keep flying towards the target until your missile hits.
+\item Since your radar is only pointing at the target in \ac{stt} mode,
+    so you lose the \ac{sa} it would normally give you.
+\end{enumerate}
+
+\section{The ARH fight}
+
+Active radar homing \ac{(arh)} missiles like the \designation{AIM-120} AMRAAM
+make your job easier for one reason: you can turn around.
+
+\chapter{Dogfighting}

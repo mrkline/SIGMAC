@@ -239,6 +239,10 @@
 
 \newcommand{\designation}[1]{\mbox{\addfontfeature{Numbers=LowercaseOff}#1}}
 
+% Fake subscript
+\newcommand{\fakesub}[2]{#1\raisebox{-0.2ex}{\textsc{%
+    \footnotesize\addfontfeature{LetterSpace=-5}#2}}}
+
 % "Chapter <num>" references
 \newcommand{\chapref}[1]{chapter~\ref{#1}}
 
