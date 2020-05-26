@@ -2,7 +2,7 @@
 
 Intercepting and shooting other airplanes is about managing \emph{time and space}.
 If you know a bandit is 100 miles away from your jet,
-you have lots of time to create, execute, and evaluate a plan.
+you have lots of time to create and execute a game plan.
 If someone pops up five miles away and starts shooting at you,
 all you can do is react.
 Situational awareness \ac{(sa)} is king---knowing what's going on around
@@ -11,22 +11,31 @@ you will keep you alive and let \emph{you} decide how a fight will unfold.
 \section{Searching}
 
 You've got to find the bad guys before you can shoot them,
-so use the tools you have to build a \introduce{picture} of the airspace
-around you.
-These tools include your own radar,
-airborne or ground-based command \& control \ac{(c2)},
-datalink, and other planes in your flight.
-Communicate and share information with each other.\punckern\footnote{See
-\chapref{brevity} for more on how to quickly communicate.}
+so step one is to use the tools in your plane to build a \emph{picture}
+of the airspace around you.
+These tools include your radar,
+radio communication with your wingmen or with
+command \& control \ac{(c2)} assets, datalink,
+and your radar warning receiver \ac{(rwr)}.
 
-Using your radar to search for targets comes with practice.
+Each of these information sources has its own advantages and disadvantages.
+Your radar provides a narrow picture of your surroundings---showing
+only whatever is in a cone off your nose---but it gives you
+real-time locations and speeds of whatever it sees.
+On the opposite side of the spectrum,
+\ac{c2} often has the most complete picture of the airspace,
+but has slower response times (since information is verbalized over the radio)
+and less accurate locations.
+
+\subsection{Radar}
+
+Let's focus first on radar employment,
+since it's the tool you have the most control over.
+Searching for targets comes with practice.
 While details vary from plane to plane,
 all of them\footnote{Ignoring very modern active electronically scanned array
 \ac{(aesa)} radars, which you probably won't find in a sim.}
 work by moving a narrow radar beam around by pointing an antenna in your nose.
-The narrow field of view of this antenna means you need to choose between
-slowly searching a big area, or rapidly searching a small area.
-
 Imagine you're in a dark room with a flashlight.
 You can slowly reveal the whole room by swinging the flashlight in wide arcs
 in front of you (increasing your scan azimuth),
@@ -34,22 +43,72 @@ and repeating those arcs up and down, one on top of each other
 (scan bars).
 Or you can focus on a particular corner by swinging the light in short arcs
 repeated over fewer vertical bars.
-There's no ``right'' search settings---it
-all depends on the situation.
+
+This is the fundamental tradeoff: you need to choose between
+slowly searching a big area, or rapidly searching a small area.
+If you're not sure where targets are,
+a larger scan will be more likely to notice them.
+A smaller scan, meanwhile, is useful for quickly narrowing down a target's
+location once you have a rough idea based on other sources.
+If you're running away from a target, but want to quickly turn around and
+snap a shot off,
+you should command a narrow scan in the direction you're turning
+to quickly acquire the target.
 
 Once you've found some contacts you're interested in,
 use radar modes like track-while-scan \ac{(tws)} to follow the target.
 This will provide you with frequent updates on the target's position, heading,
 and speed, while still providing \ac{sa} of the surrounding airspace.
 
+\subsection{Command and Control}
+
+Assuming you're on the right radio frequency and some \ac{c2} asset
+is directing intercepts, they can quickly provide you with some key information
+about the air picture. See \textbf{Picture}, \textbf{Bogey Dope},
+and \textbf{Declare} in \chapref{brevity}.
+
+\subsection{Datalink}
+
+Newer jets often have a \introduce{datalink} network, which allows
+planes to share an air picture, which you can then display in your cockpit.
+While you still need to use your own radar to guide missiles,\punckern%
+\footnote{Modern datalink systems actually \emph{can} guide another plane's
+missiles, but, like \ac{aesa} radars, you probably won't see it in a sim.},
+datalink contacts can be an excellent hint as to where you should look.
+Working with your wingman to share data and quickly scan the airspace around
+you is a vital skill.
+
+\subsection{Radar Warning Receiver}
+
+An \ac{rwr} works by detecting incoming radar pulses,
+then using a catalog of known emitters to categorize the threat
+and show you its \emph{rough} direction and distance.\punckern\footnote{Real
+fighter pilots often point out that real \ac{rwr}s---especially older
+ones---provide much less reliable info than they do in sims.}
+Their capabilities vary wildly depending on their vintage and country of origin:
+American \ac{rwr}s give fairly precise azimuth information
+and can display dozens of emitters at once.
+Russian ones usually only show the highest threat or two,
+but also display higher-resolution signal strength along with altitude.
+
 \section{IFF}
 
 You've found something you want to shoot. Great!
 Next make sure to \emph{positvely identify}
-that it's worth shooting using tools like
-\ac{iff} transponders,
-declarations from \ac{c2},
-and non-cooperative-target recognition \ac{(nctr)}.
+that it's worth shooting.
+This often involves multiple factors,
+including:
+\begin{itemize}
+\item Visually identifying the target with a targeting pod or your eyeballs
+\item Using \ac{iff} transponders, which work by sending a coded radio signal
+    to the aircraft in question and expecting a certain response back.
+\item Declarations from \ac{c2}
+\item Non-cooperative target recognition \ac{(nctr)},
+    a feature of some radars that can classify an aircraft based
+    on the size and shape of its engines' fan blades.
+    (This only works in \ac{stt}, at shorter ranges,
+    against an enemy heading straight towards you or away from you.)
+\end{itemize}
 Once you're sure they're hostile, let's talk about shooting missiles.
 
 \section{Missile kinematics and you}
