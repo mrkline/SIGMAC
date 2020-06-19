@@ -14,28 +14,30 @@ You've got to find the bad guys before you can shoot them,
 so step one is to use the tools in your plane to build a \emph{picture}
 of the airspace around you.
 These tools include your radar,
-radio communication with your wingmen or with
-command \& control \ac{(c2)} assets, datalink,
+radio communication with command \& control \ac{(c2)} assets
+and other airplanes, datalink,
 and your radar warning receiver \ac{(rwr)}.
 
-Each of these information sources has its own advantages and disadvantages.
-Your radar provides a narrow picture of your surroundings---showing
-only whatever is in a cone off your nose---but it gives you
-real-time locations and speeds of whatever it sees.
+Each of these sources has its own advantages and disadvantages.
+For example,
+your radar's view is limited to a cone off your nose,
+but it provides rapid, accurate updates about the things it sees.
 On the opposite side of the spectrum,
 \ac{c2} often has the most complete picture of the airspace,
-but has slower response times (since information is verbalized over the radio)
-and less accurate locations.
+but slower response times and less accurate locations
+since they need to convey that information by talking on the radio.
 
 \subsection{Radar}
 
-Let's focus first on radar employment,
-since it's the tool you have the most control over.
+Let's talk about the radar first,
+since it's your primary tool for finding other planes.
 Searching for targets comes with practice.
 While details vary from plane to plane,
 all of them\footnote{Ignoring very modern active electronically scanned array
 \ac{(aesa)} radars, which you probably won't find in a sim.}
-work by moving a narrow radar beam around by pointing an antenna in your nose.
+work by emitting a beam of energy from an antenna in your nose.
+Because this beam is fairly narrow,
+the radar ``looks around'' by pointing the antenna with mechanical gimbals.
 Imagine you're in a dark room with a flashlight.
 You can slowly reveal the whole room by swinging the flashlight in wide arcs
 in front of you (increasing your scan azimuth),
@@ -47,57 +49,57 @@ repeated over fewer vertical bars.
 This is the fundamental tradeoff: you need to choose between
 slowly searching a big area, or rapidly searching a small area.
 If you're not sure where targets are,
-a larger scan will be more likely to notice them.
+a larger scan will be more likely to find them.
 A smaller scan, meanwhile, is useful for quickly narrowing down a target's
-location once you have a rough idea based on other sources.
+location once you have a rough idea from other sources.
 If you're running away from a target, but want to quickly turn around and
 snap a shot off,
 you should command a narrow scan in the direction you're turning
 to quickly acquire the target.
 
 Once you've found some contacts you're interested in,
-use radar modes like track-while-scan \ac{(tws)} to follow the target.
+use radar modes like \introduce{track-while-scan} \ac{(tws)}
+to follow the target.
 This will provide you with frequent updates on the target's position, heading,
 and speed, while still providing \ac{sa} of the surrounding airspace.
 
 \subsection{Command and Control}
 
-Assuming you're on the right radio frequency and some \ac{c2} asset
-is directing intercepts, they can quickly provide you with some key information
+Assuming you're on the right radio frequency,
+\ac{c2} assets can can quickly hand you key information
 about the air picture. See \textbf{Picture}, \textbf{Bogey Dope},
 and \textbf{Declare} in \chapref{brevity}.
 
 \subsection{Datalink}
 
-Newer jets often have a \introduce{datalink} network, which allows
+Newer jets often have a \introduce{datalink} network which allows
 planes to share an air picture, which you can then display in your cockpit.
 While you still need to use your own radar to guide missiles,\punckern%
 \footnote{Modern datalink systems actually \emph{can} guide another plane's
-missiles, but, like \ac{aesa} radars, you probably won't see it in a sim.},
+missiles, but, like \ac{aesa} radars, you probably won't see it in a sim.}
 datalink contacts can be an excellent hint as to where you should look.
 Working with your wingman to share data and quickly scan the airspace around
 you is a vital skill.
 
 \subsection{Radar Warning Receiver}
 
-An \ac{rwr} works by detecting incoming radar pulses,
+An \ac{rwr} works by detecting incoming radar pulses
+with antennas spread around the plane,
 then using a catalog of known emitters to categorize the threat
 and show you its \emph{rough} direction and distance.\punckern\footnote{Real
-fighter pilots often point out that real \ac{rwr}s---especially older
-ones---provide much less reliable info than they do in sims.}
+fighter pilots often point out that \ac{rwr}s---especially older
+ones---provide much less reliable info than sims often depict.}
 Their capabilities vary wildly depending on their vintage and country of origin:
-American \ac{rwr}s give fairly precise azimuth information
+modern American \ac{rwr}s give fairly precise azimuth information
 and can display dozens of emitters at once.
-Russian ones usually only show the highest threat or two,
-but also display higher-resolution signal strength along with altitude.
+Russian \ac{rwr}s usually only show the highest threat or two,
+but also display the emitter's signal strength and relative altitude.
 
 \section{IFF}
 
 You've found something you want to shoot. Great!
-Next make sure to \emph{positvely identify}
-that it's worth shooting.
-This often involves multiple factors,
-including:
+Next you need to get \introduce{identification, friend or foe} \ac{(iff)}.
+Positive \textsc{id} can come from multiple factors, including:
 \begin{itemize}
 \item Visually identifying the target with a targeting pod or your eyeballs
 \item Using \ac{iff} transponders, which work by sending a coded radio signal
@@ -113,36 +115,37 @@ Once you're sure they're hostile, let's talk about shooting missiles.
 
 \section{Missile kinematics and you}
 
-At the risk of stating the obvious, you win a \ac{bvr} fight by making sure your
-missile hits them before their missile hits you.
+At the risk of stating the obvious, you win a missile fight by making sure yours
+hits them before theirs hits you.
 But outside the movie \emph{Behind Enemy Lines},
 missiles don't endlessly chase down their targets.
 The rocket motor burns for a few seconds,
 accelerating the missile to very high speeds (Mach 2+),
 then the missile coasts to its target.\punckern\footnote{Many
-\ac{bvr} missiles also use the time the motor burns to climb---or
-\introduce{loft}---to higher altitudes where there is less air resistance.}
+\ac{bvr} missiles also climb---or \introduce{loft}---while the motor burns
+to reach thinner air, where they can coast further.}
 
-This makes \ac{bvr} a game of \emph{energy} management.
-You want to maximize your missile's energy so it can get to your target.
-At the same time, you want minimize any incoming missile's energy
+This makes \introduce{beyond visual range} \ac{(bvr)} engagements
+a game of energy management.
+You want to maximize your missile's energy so that it can get to your target.
+At the same time, you want \emph{deplete} any incoming missile's energy
 so that it falls out of the sky trying to catch you.
 Let's talk about the ``not getting shot'' part first.
 
-\textbf{\textsc{Do not fly directly towards someone shooting
-you.}}\punckern\footnote{Or who \emph{might} be shooting you---we'll talk about
-active radar homing \ac{(arh)} missiles shortly.}
-Doing so \emph{maximizes} an incoming missile's energy,
-since it just has to fly in a straight line, right into your dumb face.
-Instead, we're going to \introduce{crank}.
+\textbf{\textsc{Do not fly directly towards someone shooting at
+you.}}\punckern\footnote{Or who \emph{might} be shooting at you---we'll talk
+about active radar homing \ac{(arh)} missiles shortly.}
+Doing so gives an incoming missile the easiest possible job:
+it can just fly a straight line, right into your dumb face.
+Instead, you \introduce{crank}.
 Once an enemy gets close enough that they could feasibly shoot you,
 turn so that they're on the side of your radar scope,
 a few degrees from its gimbal limit.
 This does two important things:
-first, it maximizes the distance an incoming missile has to fly to get you
-(while still allowing you to track them with your radar).
-Second, it forces an incoming missile to \emph{continuously turn} to
-aim at you.
+first, it maximizes the distance an incoming missile has to fly to get to you
+(while keeping the target on your radar).
+Second, it forces an incoming missile to \emph{continuously turn} while it
+flies towards you
 And because missiles, like airplanes, turn by sticking their control surfaces
 into the wind stream, this slows them down.
 Speed is also a factor---the faster you're going,
@@ -150,12 +153,14 @@ the further a missile has to chase you down.
 
 If you're up against a competent adversary and cranking alone isn't enough to
 defeat an incoming missile, it's time for more drastic measures.
-Dive to lower altitudes, where the thicker air will induce more drag on
-the missile. Fly a perpendicular heading to the missile---\introduce{beam} it.
+Dive to lower altitudes, where the thicker air creates more drag and makes
+rocket motors less efficient.\punckern\footnote{A fun bit of rocket
+science: rocket motors are most efficient in a vaccum.}
+Fly a perpendicular heading to the missile---\introduce{beam} it.
 Beaming maximizes the amount the missile has to turn,
-and makes you hard to track on radar,
+and makes you harder to track on radar,
 especially if you're below the one locking you up.
-Dispense chaff and flares as-needed.
+Dispense chaff or flares.
 Finally, when the missile is close,\punckern\footnote{Knowing \emph{when} a
 missile is seconds from impact comes with timing, experience, and a bit of luck.}
 pull a high-G turn \emph{into} the missile and across its nose.
@@ -172,7 +177,7 @@ The time to squeeze the trigger depends on:
     A missile has less distance to cover if you and your target are racing
     towards each other than if the target is running away.
 \end{itemize}
-Once you've locked onto a target in,
+Once you've locked onto a target,
 your jet's avionics will calculate a few ranges and display them on your
 heads-up display \ac{(hud)}.
 These usually include:
@@ -194,12 +199,12 @@ These usually include:
 \end{itemize}
 Notice that all of these ranges are expressed as probabilities!
 Even if the missile works perfectly,
-you don't know how your target will start maneuvering once you've shot at them.
+you don't know how your target maneuver once you've shot at them.
 A shot inside \fakesub{R}{ne} could still be defeated if the enemy can accelerate,
 break your radar lock, or outmaneuver the missile as it gets close.
 Holding your shot (above \fakesub{R}{min}) will almost always give you
 a better chance at a kill,
-but it also increases the likelyhood you'll get hit in the process.
+but it also increases the likelyhood you'll get hit yourself.
 
 Keeping all that in mind, let's talk tactics.
 
