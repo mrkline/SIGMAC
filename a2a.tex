@@ -1,9 +1,9 @@
 \chapter{Air to Air: Beyond Visual Range}
 
 Intercepting and shooting other airplanes is about managing \emph{time and space}.
-If you know a bandit is 100 miles away from your jet,
+If you know your target is 100 miles away,
 you have lots of time to create and execute a game plan.
-If someone pops up five miles away and starts shooting at you,
+If they announce their presence by shooting at you from point blank range,
 all you can do is react.
 Situational awareness \ac{(sa)} is king---knowing what's going on around
 you will keep you alive and let \emph{you} decide how a fight will unfold.
@@ -11,17 +11,17 @@ you will keep you alive and let \emph{you} decide how a fight will unfold.
 \section{Searching}
 
 You've got to find the bad guys before you can shoot them,
-so step one is to use the tools in your plane to build a \emph{picture}
+so step one is to use the tools at your disposal to build a \emph{picture}
 of the airspace around you.
 These tools include your radar,
 radio communication with command \& control \ac{(c2)} assets
-and other airplanes, datalink,
+and other fighters, datalink,
 and your radar warning receiver \ac{(rwr)}.
 
 Each of these sources has its own advantages and disadvantages.
 For example,
-your radar's view is limited to a cone off your nose,
-but it provides rapid, accurate updates about the things it sees.
+your radar provides rapid, accurate updates,
+but its view is limited to a cone off your nose.
 On the opposite side of the spectrum,
 \ac{c2} often has the most complete picture of the airspace,
 but slower response times and less accurate locations
@@ -29,11 +29,9 @@ since they need to convey that information by talking on the radio.
 
 \subsection{Radar}
 
-Let's talk about the radar first,
-since it's your primary tool for finding other planes.
-Searching for targets comes with practice.
+Let's start with a modern fighter's primary search tool: radar.
 While details vary from plane to plane,
-all of them\footnote{Ignoring very modern active electronically scanned array
+all radars\footnote{Ignoring very modern active electronically scanned array
 \ac{(aesa)} radars, which you probably won't find in a sim.}
 work by emitting a beam of energy from an antenna in your nose.
 Because this beam is fairly narrow,
@@ -41,16 +39,15 @@ the radar ``looks around'' by pointing the antenna with mechanical gimbals.
 Imagine you're in a dark room with a flashlight.
 You can slowly reveal the whole room by swinging the flashlight in wide arcs
 in front of you (increasing your scan azimuth),
-and repeating those arcs up and down, one on top of each other
+and by stacking those arcs vertically, one on top of each other
 (scan bars).
 Or you can focus on a particular corner by swinging the light in short arcs
 repeated over fewer vertical bars.
 
 This is the fundamental tradeoff: you need to choose between
 slowly searching a big area, or rapidly searching a small area.
-If you're not sure where targets are,
-a larger scan will be more likely to find them.
-A smaller scan, meanwhile, is useful for quickly narrowing down a target's
+A larger scan is more likely to find targets if you're not sure where they are,
+but a smaller scan can rapidly pinpoint a target's
 location once you have a rough idea from other sources.
 If you're running away from a target, but want to quickly turn around and
 snap a shot off,
@@ -66,33 +63,34 @@ and speed, while still providing \ac{sa} of the surrounding airspace.
 \subsection{Command and Control}
 
 Assuming you're on the right radio frequency,
-\ac{c2} assets can can quickly hand you key information
-about the air picture. See \textbf{Picture}, \textbf{Bogey Dope},
+\ac{c2} assets can quickly describe the air picture for you.
+See \textbf{Picture}, \textbf{Bogey Dope},
 and \textbf{Declare} in \chapref{brevity}.
 
 \subsection{Datalink}
 
-Newer jets often have a \introduce{datalink} network which allows
-planes to share an air picture, which you can then display in your cockpit.
+Newer jets often share information, including the air picture,
+over a \introduce{datalink} network.
 While you still need to use your own radar to guide missiles,\punckern%
 \footnote{Modern datalink systems actually \emph{can} guide another plane's
 missiles, but, like \ac{aesa} radars, you probably won't see it in a sim.}
-datalink contacts can be an excellent hint as to where you should look.
-Working with your wingman to share data and quickly scan the airspace around
+datalink contacts provide an excellent hint as to where you should look.
+Working with your wingman to quickly scan the airspace around
 you is a vital skill.
 
 \subsection{Radar Warning Receiver}
 
 An \ac{rwr} works by detecting incoming radar pulses
-with antennas spread around the plane,
+using antennas on your plane,
 then using a catalog of known emitters to categorize the threat
 and show you its \emph{rough} direction and distance.\punckern\footnote{Real
 fighter pilots often point out that \ac{rwr}s---especially older
 ones---provide much less reliable info than sims often depict.}
-Their capabilities vary wildly depending on their vintage and country of origin:
-modern American \ac{rwr}s give fairly precise azimuth information
+Their capabilities vary wildly depending on their vintage and country of origin.
+Modern American models give good azimuth information
 and can display dozens of emitters at once.
-Russian \ac{rwr}s usually only show the highest threat or two,
+Russian models, on the other hand,
+usually only show the highest threat or two,
 but also display the emitter's signal strength and relative altitude.
 
 \section{IFF}
@@ -106,8 +104,8 @@ Positive \textsc{id} can come from multiple factors, including:
     to the aircraft in question and expecting a certain response back.
 \item Declarations from \ac{c2}
 \item Non-cooperative target recognition \ac{(nctr)},
-    a feature of some radars that can classify an aircraft based
-    on the size and shape of its engines' fan blades.
+    a family of techniques to classify an aircraft based
+    on the radar returns from its engines' fan blades.
     (This only works in \ac{stt}, at shorter ranges,
     against an enemy heading straight towards you or away from you.)
 \end{itemize}
@@ -128,8 +126,8 @@ to reach thinner air, where they can coast further.}
 This makes \introduce{beyond visual range} \ac{(bvr)} engagements
 a game of energy management.
 You want to maximize your missile's energy so that it can get to your target.
-At the same time, you want \emph{deplete} any incoming missile's energy
-so that it falls out of the sky trying to catch you.
+At the same time, you want \emph{deplete} the energy of incoming missiles
+so that they fall out of the sky trying to catch you.
 Let's talk about the ``not getting shot'' part first.
 
 \textbf{\textsc{Do not fly directly towards someone shooting at
@@ -137,15 +135,15 @@ you.}}\punckern\footnote{Or who \emph{might} be shooting at you---we'll talk
 about active radar homing \ac{(arh)} missiles shortly.}
 Doing so gives an incoming missile the easiest possible job:
 it can just fly a straight line, right into your dumb face.
-Instead, you \introduce{crank}.
+Instead, you should \introduce{crank}.
 Once an enemy gets close enough that they could feasibly shoot you,
-turn so that they're on the side of your radar scope,
+turn so that they're near the edge of your radar scope,
 a few degrees from its gimbal limit.
 This does two important things:
 first, it maximizes the distance an incoming missile has to fly to get to you
 (while keeping the target on your radar).
 Second, it forces an incoming missile to \emph{continuously turn} while it
-flies towards you
+flies towards you.
 And because missiles, like airplanes, turn by sticking their control surfaces
 into the wind stream, this slows them down.
 Speed is also a factor---the faster you're going,
@@ -170,7 +168,7 @@ bleeding lots of energy.
 All the same factors apply when you're the shooter.
 The time to squeeze the trigger depends on:
 \begin{itemize}
-\item Range (obviuosly)
+\item Range to target (obviuosly)
 \item Altitude: higher is better, but being too high can make it hard to
     maneuver if you get shot at.
 \item Aspect \& closure rate:
@@ -182,7 +180,7 @@ your jet's avionics will calculate a few ranges and display them on your
 heads-up display \ac{(hud)}.
 These usually include:
 \begin{itemize}
-\item The maximum aerodynamic range of the missile, usually called
+\item The maximum aerodynamic range of the missile, or
     \fakesub{R}{aero}.
     A shot at this range will only hit if the target doesn't maneuver
     \emph{at all} after you launch.
@@ -197,9 +195,9 @@ These usually include:
 \item The minimum range where the missile has enough room to turn into the
     enemy and arm itself, called \fakesub{R}{min}.
 \end{itemize}
-Notice that all of these ranges are expressed as probabilities!
+Notice that all of the max ranges are probabilities!
 Even if the missile works perfectly,
-you don't know how your target maneuver once you've shot at them.
+you don't know how your target will maneuver once you've shot at them.
 A shot inside \fakesub{R}{ne} could still be defeated if the enemy can accelerate,
 break your radar lock, or outmaneuver the missile as it gets close.
 Holding your shot (above \fakesub{R}{min}) will almost always give you
@@ -223,9 +221,29 @@ This presents two unique challenges:
     so you lose the \ac{sa} it would normally give you.
 \end{enumerate}
 
+Crank as you approach your target's maximum range\footnote{This range,
+of course, depends on your opponent's speed, altitude, and loadout.}
+to hamper any shots they take at you.
+Then, when it's time for you to shoot, crank to the opposite side,
+firing as your nose passes across the target.
+This should place your shot in the allowable steering error \ac{(ase)}
+circle and minimize the amount of energy the missile has to spend turning
+into the target.
+
+You might repeat this ``crank and shoot'' pattern several times,
+taking an early shot to make your opponent fly
+defensively, followed by a second shot at a closer range with a higher
+probability of kill (\fakesub{P}{k}).
+If you and your target both fail to kill each other,
+you'll find yourself within visual range.
+It's dogfight time. (See \chapref{bfm}.)
+
 \section{The ARH fight}
 
 Active radar homing \ac{(arh)} missiles like the \designation{AIM-120} AMRAAM
 make your job easier for one reason: you can turn around.
 
+TODO: F-Poles, A-Poles, Skate, Banzai, oh my!
+
 \chapter{Dogfighting}
+\label{bfm}
